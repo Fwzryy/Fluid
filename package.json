@@ -7,5 +7,8 @@
   },
   "author": "cleavyln",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "three": "^0.179.1"
+  }
 }
