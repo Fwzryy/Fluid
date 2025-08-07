@@ -3,31 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="/style.css">
   <title>Fluid</title>
+
+  <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/"
+  }
+}
+</script>
 </head>
 <body>
   <nav>
     <div class="logo">
-      <p>ZenL</p>
+      <p>Kyloo Studio</p>
     </div>
     <div class="nav-items">
       <p>Index</p>
       <p>Portfolio</p>
       <p>Info</p>
+      <p>Gallery</p>
+      <p>FAQ</p>
       <p>Contact</p>
     </div>
   </nav>
   <section class="hero">
     <div class="gradient-canvas"></div>
 
+    <div class="hero-logo">
+      <img src="/logo-1.png" alt="" />
+    </div>
+
     <div class="hero-footer">
       <p>Experiment 0649</p>
-      <p>Built by Zenzoaru</p>
+      <p>Built by Kyloo</p>
     </div>
   </section>
-  <script type="module" src="./shaders.js"></script>
-  <script type="module" src="./script.js"></script>
- 
+  <script type="module" src="/shaders.js"></script>
+  <script type="module" src="/script.js"></script>
+
 </body>
 </html>

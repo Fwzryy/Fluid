@@ -22,7 +22,8 @@ p {
   font-weight: 450;
 }
 
-nav .hero-footer {
+nav,
+.hero-footer {
   position: absolute;
   left: 0;
   width: 100vw;
@@ -51,6 +52,14 @@ section {
   width: 100vw;
   height: 100svh;
   overflow: hidden;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
 }
 
 .gradient-canvas {

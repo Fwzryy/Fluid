@@ -2,9 +2,9 @@ import * as THREE from "three";
 import { vertexShader, fluidShader, displayShader } from "./shaders.js";
 
 const config = {
-  brushSize: 90.0,
-  brushStrength: 9.5,
-  distortionAmount: 0.5,
+  brushSize: 25.0,
+  brushStrength: 0.5,
+  distortionAmount: 2.5,
   fluidDecay: 0.98,
   trailLength: 0.8,
   stopDecay: 0.85,
@@ -26,7 +26,7 @@ function hexToRgb(hex) {
 const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 
-const gradientCanvas = document.querySelector(".gradient-canvas");
+const gradientCanvas = document.querySelector(".gradien -canvas");
 renderer.setSize(window.innerWidth, window.innerHeight);
 gradientCanvas.appendChild(renderer.domElement);
 
@@ -99,10 +99,10 @@ const fluidPlane = new THREE.Mesh(geometry, fluidMaterial);
 const displayPlane = new THREE.Mesh(geometry, displayMaterial);
 
 let mouseX = 0,
-    mouseY = 0;
+  mouseY = 0;
 let prevMouseX = 0,
-    prevMouseY = 0;
-let lastMoveTime = performance.now();
+  prevMouseY = 0;
+let lastMoveTime = 0;
 
 document.addEventListener("mousemove", (e) => {
   const rect = gradientCanvas.getBoundingClientRect();
@@ -110,9 +110,7 @@ document.addEventListener("mousemove", (e) => {
   prevMouseY = mouseY;
   mouseX = e.clientX - rect.left;
   mouseY = rect.height - (e.clientY - rect.top);
-
-  lastMoveTime = performance.now(); // BARIS KRUSIAL
-
+  lastMoveTime = performance.now();
   fluidMaterial.uniforms.iMouse.value.set(
     mouseX,
     mouseY,
@@ -132,8 +130,7 @@ function animate() {
   fluidMaterial.uniforms.iTime.value = time;
   displayMaterial.uniforms.iTime.value = time;
   fluidMaterial.uniforms.iFrame.value = frameCount;
-
-  // Masalah ini sekarang terpecahkan karena lastMoveTime diperbarui
+  
   if (performance.now() - lastMoveTime > 100) {
     fluidMaterial.uniforms.iMouse.value.set(0, 0, 0, 0);
   }

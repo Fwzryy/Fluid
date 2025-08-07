@@ -7,8 +7,11 @@
   },
   "author": "cleavyln",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "three": "^0.179.1"
-  }
+  },
+  "devDependencies": {
+    "vite": "^7.0.6"
+  },
+  "description": ""
 }
